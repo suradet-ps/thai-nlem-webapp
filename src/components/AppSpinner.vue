@@ -4,7 +4,7 @@ withDefaults(
         text?: string;
     }>(),
     {
-        text: "Scanning data...",
+        text: "กำลังค้นหา กรุณารอสักครู่...",
     },
 );
 </script>
