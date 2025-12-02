@@ -1,7 +1,7 @@
 // src/stores/drugStore.ts
 
-import { ref, computed } from "vue";
-import { defineStore } from "pinia";
+import { ref, computed } from 'vue';
+import { defineStore } from 'pinia';
 
 // --- Type Definition ---
 export interface Drug {
@@ -12,12 +12,12 @@ export interface Drug {
 }
 
 // --- Constants ---
-const API_ENDPOINT = "https://thai-nlem-api.onrender.com/api/drugs/search";
+const API_ENDPOINT = 'https://thai-nlem-api.onrender.com/api/drugs/search';
 const MIN_SEARCH_LENGTH = 2;
 
 // Define the store
 // 'drug' is the unique ID of this store
-export const useDrugStore = defineStore("drug", () => {
+export const useDrugStore = defineStore('drug', () => {
   // --- State ---
   // Equivalent to `data` in Options API, managed by Pinia.
   const searchResults = ref<Drug[]>([]);
@@ -59,7 +59,7 @@ export const useDrugStore = defineStore("drug", () => {
 
       searchResults.value = await response.json();
     } catch (err: any) {
-      error.value = err.message || "An unknown error occurred.";
+      error.value = err.message || 'An unknown error occurred.';
       searchResults.value = [];
     } finally {
       isLoading.value = false;

@@ -36,16 +36,19 @@ You need to have [Node.js](https://nodejs.org/) (version 18.x or newer recommend
 ### Installation & Local Development
 
 1.  **Clone the repository:**
+
     ```bash
     git clone https://github.com/pharmacist-sabot/thai-nlem-webapp.git
     ```
 
 2.  **Navigate to the project directory:**
+
     ```bash
     cd thai-nlem-webapp
     ```
 
 3.  **Install the dependencies:**
+
     ```bash
     npm install
     ```
