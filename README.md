@@ -2,21 +2,21 @@
 
 A simple and fast web application for searching drug information from Thailand's National List of Essential Medicines (NLEM). This project provides a user-friendly frontend interface for the [thai-nlem-api](https://github.com/pharmacist-sabot/thai-nlem-api).
 
-## ✨ Features
+## Features
 
 - **Live Search**: Instantly search for drugs by their generic name.
 - **Debounced Input**: API requests are debounced to ensure efficient network usage and a smooth user experience.
 - **Detailed Information**: Displays the drug's generic name, available dosage forms, and its NLEM account level (e.g., บัญชี ก, ข, ค).
 - **Clear UI States**: Provides distinct visual feedback for loading, error, and "no results found" states.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Framework**: [Vue 3](https://vuejs.org/) (using Composition API with `<script setup>`)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Styling**: Vanilla CSS with CSS Custom Properties
 
-## 🔌 Backend API
+## Backend API
 
 This web application is a client for the `thai-nlem-api`. It consumes the public API endpoint hosted on Render.
 
@@ -25,7 +25,7 @@ This web application is a client for the `thai-nlem-api`. It consumes the public
 
 For more details about the API, please visit its repository.
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -59,7 +59,7 @@ You need to have [Node.js](https://nodejs.org/) (version 18.x or newer recommend
     ```
     This will start the Vite development server. You can now open your browser and visit `http://localhost:5173` (or the URL shown in your terminal) to see the application in action.
 
-## 📦 Building for Production
+## Building for Production
 
 To create a production-ready build of the application, run the following command:
 
@@ -69,7 +69,7 @@ npm run build
 
 This command will compile and minify the application's assets. The output will be placed in the `dist/` directory, which can then be deployed to any static hosting service.
 
-## 📁 Project Structure
+## Project Structure
 
 The project follows a standard Vite + Vue project structure:
 
@@ -92,10 +92,10 @@ The project follows a standard Vite + Vue project structure:
 └── vite.config.ts        # Vite configuration
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! If you have suggestions for improvement or find any bugs, please feel free to open an issue or submit a pull request.
 
-## 📄 License
+## License
 
 This project is open source.
