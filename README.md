@@ -1,6 +1,6 @@
 # Thai NLEM Drug Search Web App
 
-A simple and fast web application for searching drug information from Thailand's National List of Essential Medicines (NLEM). This project provides a user-friendly frontend interface for the [thai-nlem-api](https://github.com/pharmacist-sabot/thai-nlem-api).
+A simple and fast web application for searching drug information from Thailand's National List of Essential Medicines (NLEM). This project provides a user-friendly frontend interface for the [thai-nlem-api](https://github.com/suradet-ps/thai-nlem-api).
 
 ## Features
 
@@ -38,7 +38,7 @@ You need to have [Node.js](https://nodejs.org/) (version 18.x or newer recommend
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/pharmacist-sabot/thai-nlem-webapp.git
+    git clone https://github.com/suradet-ps/thai-nlem-webapp.git
     ```
 
 2.  **Navigate to the project directory:**
