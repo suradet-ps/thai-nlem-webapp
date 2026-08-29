@@ -1,101 +1,131 @@
-# Thai NLEM Drug Search Web App
-
-A simple and fast web application for searching drug information from Thailand's National List of Essential Medicines (NLEM). This project provides a user-friendly frontend interface for the [thai-nlem-api](https://github.com/suradet-ps/thai-nlem-api).
-
-## Features
-
-- **Live Search**: Instantly search for drugs by their generic name.
-- **Debounced Input**: API requests are debounced to ensure efficient network usage and a smooth user experience.
-- **Detailed Information**: Displays the drug's generic name, available dosage forms, and its NLEM account level (e.g., บัญชี ก, ข, ค).
-- **Clear UI States**: Provides distinct visual feedback for loading, error, and "no results found" states.
-
-## Technology Stack
-
-- **Framework**: [Vue 3](https://vuejs.org/) (using Composition API with `<script setup>`)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: Vanilla CSS with CSS Custom Properties
-
-## Backend API
-
-This web application is a client for the `thai-nlem-api`. It consumes the public API endpoint hosted on Render.
-
-- **API Base URL**: `https://thai-nlem-api.onrender.com/`
-- **Search Endpoint**: `/api/drugs/search?q={query}`
-
-For more details about the API, please visit its repository.
-
-## Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-You need to have [Node.js](https://nodejs.org/) (version 18.x or newer recommended) and [npm](https://www.npmjs.com/) installed on your machine.
-
-### Installation & Local Development
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/suradet-ps/thai-nlem-webapp.git
-    ```
-
-2.  **Navigate to the project directory:**
-
-    ```bash
-    cd thai-nlem-webapp
-    ```
-
-3.  **Install the dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-4.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
-    This will start the Vite development server. You can now open your browser and visit `http://localhost:5173` (or the URL shown in your terminal) to see the application in action.
-
-## Building for Production
-
-To create a production-ready build of the application, run the following command:
-
-```bash
-npm run build
-```
-
-This command will compile and minify the application's assets. The output will be placed in the `dist/` directory, which can then be deployed to any static hosting service.
-
-## Project Structure
-
-The project follows a standard Vite + Vue project structure:
+# Thai NLEM Drug Search
 
 ```
-.
-├── public/               # Static assets that are copied directly
-├── src/
-│   ├── assets/           # Static assets processed by Vite
-│   ├── components/       # Reusable Vue components
-│   │   ├── AppSpinner.vue
-│   │   ├── DrugCard.vue
-│   │   ├── SearchInput.vue
-│   │   └── TheHeader.vue
-│   ├── App.vue           # Main application component
-│   ├── main.ts           # Application entry point
-│   └── style.css         # Global styles
-├── index.html            # Main HTML file
-├── package.json          # Project dependencies and scripts
-├── tsconfig.json         # TypeScript compiler configuration
-└── vite.config.ts        # Vite configuration
+███╗   ██╗██╗     ███████╗███╗   ███╗
+████╗  ██║██║     ██╔════╝████╗ ████║
+██╔██╗ ██║██║     █████╗  ██╔████╔██║
+██║╚██╗██║██║     ██╔══╝  ██║╚██╔╝██║
+██║ ╚████║███████╗███████╗██║ ╚═╝ ██║
+╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝     ╚═╝
 ```
 
-## Contributing
+---
 
-Contributions are welcome! If you have suggestions for improvement or find any bugs, please feel free to open an issue or submit a pull request.
+## ◆ PULSE
 
-## License
+The essential medicines list is a reference; a reference you must
+download to consult is a reference nobody consults. This web app puts
+the National List of Essential Medicines behind a single search box:
+type a generic name, and the debounced query answers with the drug's
+dosage forms and its NLEM account level - บัญชี ก, ข, ค - with every
+UI state spoken aloud: loading, error, or an honest "no results".
+A thin, fast client for the [thai-nlem-api](https://github.com/suradet-ps/thai-nlem-api).
 
-This project is open source.
+| Live search ▣ | Debounced ▣ | Clear states ▣ | Thai-first ▣ |
+|---|---|---|---|
+
+*The lookup loop - type, answer, explain - is sealed.*
+
+> Built with Vue 3 + TypeScript + Vite, served by the public
+> thai-nlem-api on Render - the front door to Thailand's essential
+> medicines.
+>
+> **suradet-ps**, artifact keeper
+
+---
+
+## ◆ IGNITION
+
+One runtime, three commands.
+
+```
+⟫ git clone https://github.com/suradet-ps/thai-nlem-webapp.git
+⟫ cd thai-nlem-webapp
+⟫ npm install
+⟫ npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173).
+
+The release artifact: `⟫ npm run build` - output in `dist/`, deployable
+to any static host.
+
+<details>
+<summary>Prerequisites</summary>
+
+- Node.js 18+ and npm
+- The [thai-nlem-api](https://github.com/suradet-ps/thai-nlem-api)
+  running at `https://thai-nlem-api.onrender.com/` (or your own
+  instance)
+
+</details>
+
+---
+
+## ◆ ANATOMY
+
+One search box, one store, an honest answer for every state.
+
+- **Searches** - generic-name lookup against
+  `/api/drugs/search?q={query}` - the question a pharmacist or
+  developer types is the question the list answers.
+- **Debounces** - requests wait for the pause between keystrokes, so
+  the network carries one query, not ten - fast to type, light to
+  run.
+- **Explains** - each card carries the generic name, the available
+  dosage forms, and the NLEM account level (บัญชี ก, ข, ค) - the
+  three facts a consult needs.
+- **States** - loading, error, and no-results each have their own
+  face - the interface never lets silence stand in for an answer.
+- **Stores** - the search logic lives in a Pinia store, so the
+  components stay thin and the query state stays consistent.
+
+---
+
+## ◆ RITUALS
+
+**The core ceremony** - the essential-medicine consult:
+
+1. Open the page. One search box, no ceremony required.
+2. Type the generic name. The debounce waits, then the query flies.
+3. Read the cards: dosage forms, account level, the facts in Thai.
+4. Consult and close - loading, error, and empty each told their
+   truth on the way.
+
+**The ceremony of the pause** - the request waits for the reader, not
+the reader for the request: debounce means one answer per question,
+with the network thanked for its restraint.
+
+**The ceremony of the spoken state** - no silent spinner, no blank
+page: loading is said to be loading, errors are said to be errors,
+and "no results" is an answer, not a void.
+
+---
+
+## ◆ ECHOES
+
+**Where this artifact is heading**
+
+```
+search   ▸ live generic-name lookup ─────────────────────────────────── ▸ sealed
+debounce ▸ efficient network use ────────────────────────────────────── ▸ sealed
+explain  ▸ dosage forms + account level cards ───────────────────────── ▸ sealed
+states   ▸ loading / error / no-results UI ──────────────────────────── ▸ sealed
+```
+
+**Raising the artifact** - the components live in `src/components/`;
+the search store in `src/stores/`. Lint and format checks are wired
+(`eslint` + `prettier`). Open an issue first to discuss a change.
+
+**Status** - dependencies are maintained through Renovate.
+
+---
+
+```
+  ─────────────────────────────────────────
+   A reference behind a login is a reference
+   that answers only the logged-in.
+  ─────────────────────────────────────────
+```
+
+Open source.
