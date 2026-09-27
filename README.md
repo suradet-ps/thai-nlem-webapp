@@ -1,13 +1,11 @@
 # Thai NLEM Drug Search
 
-```
-███╗   ██╗██╗     ███████╗███╗   ███╗
-████╗  ██║██║     ██╔════╝████╗ ████║
-██╔██╗ ██║██║     █████╗  ██╔████╔██║
-██║╚██╗██║██║     ██╔══╝  ██║╚██╔╝██║
-██║ ╚████║███████╗███████╗██║ ╚═╝ ██║
-╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝     ╚═╝
-```
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Vue v3](https://img.shields.io/badge/Vue-v3-4FC08D.svg?logo=vuedotjs&logoColor=white)](https://vuejs.org/)
+[![TypeScript v5](https://img.shields.io/badge/TypeScript-v5-3178C6.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite v7](https://img.shields.io/badge/Vite-v7-646CFF.svg?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Pinia v3](https://img.shields.io/badge/Pinia-v3-FFD859.svg?logo=pinia&logoColor=black)](https://pinia.vuejs.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/suradet-ps/thai-nlem-webapp/issues)
 
 ---
 
@@ -128,4 +126,4 @@ the search store in `src/stores/`. Lint and format checks are wired
   ─────────────────────────────────────────
 ```
 
-Open source.
+Open source under the [MIT License](LICENSE).
